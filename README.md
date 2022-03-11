@@ -1,0 +1,3 @@
+# SwitchTermPlayer
+
+Simple console player 
