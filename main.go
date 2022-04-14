@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/user"
-	"log"
+	//"log"
 	"github.com/hajimehoshi/oto"
 	"github.com/hajimehoshi/go-mp3"
 	"github.com/mbndr/figlet4go"
@@ -13,22 +13,32 @@ import (
 )
 
 //var mmtop string
-
+var ascii = figlet4go.NewAsciiRender()
+var renderStr, _ = ascii.Render("Hi " + usr.Username + " !")
+var usr, err = user.Current()
+var colorCyan = "\033[36m"
 
 func main() {
-	arg := os.Args[1]
-
-	ascii := figlet4go.NewAsciiRender()
-
-	colorCyan := "\033[36m"
-
-	usr, err := user.Current()
-	if err != nil {
-		log.Fatal(err)
+	if len(os.Args) != 2 {
+		fmt.Print(string(colorCyan), renderStr)
+		fmt.Println("Enter path or file's name of .mp3")
+		fmt.Println("Example: switchp <path> or <name>")
+		return
 	}
 
+	arg := os.Args[1]
+ 
+	// ascii := figlet4go.NewAsciiRender()
+ 
+	// colorCyan := "\033[36m"
+ 
+	// usr, err := user.Current()
+	// if err != nil {
+		// log.Fatal(err)
+	// }
+
 	//usr.HomeDir
-	renderStr, _ := ascii.Render("Hi " + usr.Username + " !")
+	// renderStr, _ := ascii.Render("Hi " + usr.Username + " !")
 	//fmt.Println("Hi " + usr.Username + " !")
 	fmt.Print(string(colorCyan), renderStr)
 
