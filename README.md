@@ -1,3 +1,3 @@
 # SwitchTermPlayer
 
-Simple console player 
+Simple console music player 
