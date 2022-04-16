@@ -52,7 +52,7 @@ func main() {
 	if arg == "help" {
 		fmt.Println("\nИспользование: switchp <путь к файлу/название файла>")
 	}  else {
-	f, err = os.Open(arg + ".mp3")
+	f, err = os.Open(arg)
 	fmt.Println("I'm playing '" + arg + "' for you :)")
 	defer f.Close()
 
